@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 11:15:42 by yguinio           #+#    #+#             */
-/*   Updated: 2025/01/21 11:02:19 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/23 14:44:18 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_itoa(int n)
 
 	i = 0;
 	nb = n;
-	str = (char *)malloc(sizeof(char) * (nblen + 1));
+	str = (char *)ft_calloc(sizeof(char), (nblen + 1));
 	if (!str)
 		return (NULL);
 	if (ft_isnegative(n))

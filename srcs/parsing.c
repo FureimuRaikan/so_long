@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yguinio <yguinio@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:26:20 by yguinio           #+#    #+#             */
-/*   Updated: 2025/02/12 18:08:51 by yguinio          ###   ########.fr       */
+/*   Updated: 2025/02/23 18:26:14 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	**ft_parse_map(char *file)
+//Checks if given map is correct and parse it into a char** using split function
+void	ft_parse_map(t_solong *solong, char *file)
 {
 	int		fd;
 	char	*file_content;
 	char	*line;
-	char	**map;
 
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
@@ -33,8 +33,10 @@ char	**ft_parse_map(char *file)
 		free(line);
 		line = get_next_line(fd);
 	}
-	map = ft_split(file_content, '\n');
+	solong->map = ft_split(file_content, '\n');
 	free(file_content);
 	close(fd);
-	return (ft_check_map(map), map);
+	ft_map_size(solong);
+	solong->count = 0;
+	ft_check_map(solong);
 }

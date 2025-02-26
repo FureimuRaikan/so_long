@@ -24,7 +24,7 @@ ________________________________________________________________________________
 |                                                                               |
 |    Map must be rectangular and surrounded by walls.                           |
 |                                                                               |
-|    Both Exit and Collectibles mst be reachable by the player.                 |
+|    Both Exit and Collectibles must be reachable by the player.                |
 |                                                                               |
 |    Map must only contain 0,1,P,E,C where:                                     |
 |    0 represents an empty tile.                                                |
