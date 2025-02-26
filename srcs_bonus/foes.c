@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 14:50:17 by fureimu           #+#    #+#             */
-/*   Updated: 2025/02/26 15:16:52 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/26 15:22:33 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ void	ft_move_foe(t_solong *solong, t_player *foe, int i, int dir)
 	{
 		solong->lose = 1;
 		solong->map[p.y][p.x + dir] = '0';
+	}
+	if (solong->map[p.y][p.x + dir] == 'P' && ft_check_win(solong))
+	{
+		dir *= -1;
+		foe[i].side = !foe[i].side;
 	}
 	if (solong->map[p.y][p.x + dir] == '0')
 	{
@@ -75,7 +80,6 @@ void	ft_alloc_foe(t_solong *solong)
 			{
 				ft_set_coordinates(&solong->foes[count].cords,
 					cords.x, cords.y);
-				ft_printf("%i foe at x: %i, y: %i\n", count, solong->foes[count].cords.x, solong->foes[count].cords.y);
 				count++;
 			}
 		}

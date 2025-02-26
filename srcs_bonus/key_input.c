@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:15:38 by fureimu           #+#    #+#             */
-/*   Updated: 2025/02/26 15:17:27 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/26 15:22:00 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ int	ft_move_player(int key, t_solong *solong)
 //Checks if the pressed key triggers an action
 int	ft_handle_input(int key, t_solong *solong)
 {
-	ft_printf("key pressed");
 	if (key == XK_Escape || key == 113)
 		ft_mlx_close(solong);
 	if (ft_check_win(solong) || solong->lose)
