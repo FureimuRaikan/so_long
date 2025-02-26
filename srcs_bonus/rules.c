@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 17:41:44 by yguinio           #+#    #+#             */
-/*   Updated: 2025/02/24 15:37:00 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/26 16:17:38 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_print_rules(int out_fd)
 	char	*line;
 
 	(void)out_fd;
-	fd = open("rules.txt", O_RDONLY);
+	fd = open("README.txt", O_RDONLY);
 	if (fd == -1)
 	{
 		perror("Rules open");
