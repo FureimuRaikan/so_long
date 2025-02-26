@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 14:50:17 by fureimu           #+#    #+#             */
-/*   Updated: 2025/02/26 15:22:33 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/26 16:04:44 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	ft_move_foe(t_solong *solong, t_player *foe, int i, int dir)
 			&& solong->map[p.y][p.x + (dir * 2)] != 'P')
 			foe[i].side = 1 - foe[i].side;
 	}
+	else
+		foe[i].side = 1 - foe[i].side;
 }
 
 //Moves the enemies on the map

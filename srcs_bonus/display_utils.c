@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 10:07:46 by fureimu           #+#    #+#             */
-/*   Updated: 2025/02/26 15:25:12 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/26 15:34:17 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,15 +83,24 @@ void	ft_destroy_images(t_solong *solong, t_img *asset, char *filename)
 	free(file);
 }
 
-//Stores all the assets needed for so_long
-void	ft_store_assets(t_solong *solong)
+//Chooses the right directory for the assets
+char	*ft_asset_dir(void)
 {
-	char		*asset_dir;
+	char	*asset_dir;
 
 	if (TILE_SIZE == 32)
 		asset_dir = ft_strdup("assets32/");
 	else
 		asset_dir = ft_strdup("assets/");
+	return (asset_dir);
+}
+
+//Stores all the assets needed for so_long
+void	ft_store_assets(t_solong *solong)
+{
+	char		*asset_dir;
+
+	asset_dir = ft_asset_dir();
 	ft_store_images(*solong, solong->assets.player_left, asset_dir,
 		"player_left");
 	ft_store_images(*solong, solong->assets.player_left_ex, asset_dir,

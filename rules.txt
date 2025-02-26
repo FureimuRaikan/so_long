@@ -26,12 +26,16 @@ ________________________________________________________________________________
 |                                                                               |
 |    Both Exit and Collectibles must be reachable by the player.                |
 |                                                                               |
-|    Map must only contain 0,1,P,E,C where:                                     |
+|    Map must only contain 0,1,P,E,C or X (bonus only) where:                   |
 |    0 represents an empty tile.                                                |
 |    1 represents a wall.                                                       |
 |    P represents the starting position of the player. (P must be unique)       |
 |    E represents the exit position. (E must be unique)                         |
 |    C represents the collectibles (items) position(s). (At least 1 C)          |
+|   *X represents an ennemy patrol. (bonus)                                     |
+|                                                                               |
+|                                                                               |
+|                                                                               |
 |                                                                               |
 |    Map exemples :                                                             |
 |                                                                               |
