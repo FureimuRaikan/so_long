@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 10:07:46 by fureimu           #+#    #+#             */
-/*   Updated: 2025/02/26 15:22:58 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/26 15:25:12 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void	ft_store_assets(t_solong *solong)
 	ft_store_images(*solong, solong->assets.score, asset_dir, "score");
 	ft_store_images(*solong, solong->assets.vegeta, asset_dir, "vegeta");
 	ft_store_images(*solong, solong->assets.win, asset_dir, "win");
+	solong->assets.lose = ft_new_file_img(*solong, "assets/lose0.xpm");
 	ft_store_images(*solong, solong->assets.foe_l, asset_dir, "foe_l");
 	ft_store_images(*solong, solong->assets.foe_r, asset_dir, "foe_r");
 	asset_dir = ft_strjoin_free(asset_dir, "grass.xpm");
