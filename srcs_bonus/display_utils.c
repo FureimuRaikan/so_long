@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 10:07:46 by fureimu           #+#    #+#             */
-/*   Updated: 2025/02/26 15:34:17 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/27 10:14:50 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,19 @@ char	*ft_asset_dir(void)
 	return (asset_dir);
 }
 
+//Subfuction of ft_store_assets
+static void	ft_sub_store_assets(t_solong *solong, char *asset_dir)
+{
+	char	*temp;
+
+	temp = ft_strjoin(asset_dir, "grass.xpm");
+	solong->assets.grass = ft_new_file_img(*solong, temp);
+	free(temp);
+	temp = ft_strjoin(asset_dir, "lose0.xpm");
+	solong->assets.lose = ft_new_file_img(*solong, temp);
+	free(temp);
+}
+
 //Stores all the assets needed for so_long
 void	ft_store_assets(t_solong *solong)
 {
@@ -115,10 +128,8 @@ void	ft_store_assets(t_solong *solong)
 	ft_store_images(*solong, solong->assets.score, asset_dir, "score");
 	ft_store_images(*solong, solong->assets.vegeta, asset_dir, "vegeta");
 	ft_store_images(*solong, solong->assets.win, asset_dir, "win");
-	solong->assets.lose = ft_new_file_img(*solong, "assets/lose0.xpm");
 	ft_store_images(*solong, solong->assets.foe_l, asset_dir, "foe_l");
 	ft_store_images(*solong, solong->assets.foe_r, asset_dir, "foe_r");
-	asset_dir = ft_strjoin_free(asset_dir, "grass.xpm");
-	solong->assets.grass = ft_new_file_img(*solong, asset_dir);
+	ft_sub_store_assets(solong, asset_dir);
 	free(asset_dir);
 }

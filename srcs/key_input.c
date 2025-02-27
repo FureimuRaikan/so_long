@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:15:38 by fureimu           #+#    #+#             */
-/*   Updated: 2025/02/25 09:20:32 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/27 09:47:47 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,10 @@ int	ft_move_player(int key, t_solong *solong)
 int	ft_handle_input(int key, t_solong *solong)
 {
 	if (key == XK_Escape || key == 113)
+	{
+		ft_printf("\rScore : %i\n", solong->count);
 		ft_mlx_close(solong);
+	}
 	if ((key == XK_w || key == XK_Up) || (key == XK_s || key == XK_Down)
 		|| (key == XK_a || key == XK_Left) || (key == XK_d || key == XK_Right))
 		ft_move_player(key, solong);

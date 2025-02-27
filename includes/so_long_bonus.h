@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 15:18:59 by yguinio           #+#    #+#             */
-/*   Updated: 2025/02/26 15:27:54 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/27 09:28:53 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <errno.h>
 # include <stdio.h>
 
-# define TILE_SIZE 64
+# define TILE_SIZE 32
 
 typedef struct s_img
 {

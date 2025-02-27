@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:28:14 by fureimu           #+#    #+#             */
-/*   Updated: 2025/02/26 15:11:04 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/27 10:01:30 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	ft_mlx_close(t_solong *solong)
 	ft_destroy_images(solong, solong->assets.foe_l, "assets/foe_l");
 	ft_destroy_images(solong, solong->assets.foe_r, "assets/foe_r");
 	mlx_destroy_image(solong->ptr, solong->assets.grass.img_ptr);
+	mlx_destroy_image(solong->ptr, solong->assets.lose.img_ptr);
 	mlx_destroy_window(solong->ptr, solong->win);
 	mlx_destroy_display(solong->ptr);
 	free(solong->ptr);
