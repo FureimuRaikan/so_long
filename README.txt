@@ -9,7 +9,7 @@ ________________________________________________________________________________
 |    The player must collect all items in the least amount of moves before      |
 |    being granted access to the exit.                                          |
 |                                                                               |
-|    To move, use the WASD keys.                                                |
+|    To move, use the arrows or WASD keys.                                      |
 |    To quit, press Escape or 'Q' or click on the Close window icon.            |
 |                                                                               |
 |_______________________________________________________________________________|
