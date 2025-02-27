@@ -6,7 +6,7 @@
 #    By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/08 13:05:36 by yguinio           #+#    #+#              #
-#    Updated: 2025/02/26 11:05:03 by fureimu          ###   ########.fr        #
+#    Updated: 2025/02/27 10:46:09 by fureimu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ BONUS_OBJ_DIR = ./bonus_obj/
 INC = ./includes/
 
 FILES = so_long.c rules.c map_checks.c map_checks2.c parsing.c mlx_utils.c game_utils.c game_utils2.c key_input.c display.c display_utils.c
-BONUS_FILES = so_long.c rules.c map_checks.c map_checks2.c parsing.c mlx_utils.c game_utils.c game_utils2.c key_input.c display.c display_utils.c display2.c foes.c
+BONUS_FILES = so_long.c rules.c map_checks.c map_checks2.c parsing.c mlx_utils.c game_utils.c game_utils2.c key_input.c display.c display_utils.c display2.c foes.c display_utils2.c
 
 OBJ = $(addprefix $(OBJ_DIR), $(FILES:.c=.o))
 BONUS_OBJ = $(addprefix $(BONUS_OBJ_DIR), $(BONUS_FILES:.c=.o))
