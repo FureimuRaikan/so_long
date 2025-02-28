@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 15:18:59 by yguinio           #+#    #+#             */
-/*   Updated: 2025/02/27 09:28:53 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/28 08:57:39 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ typedef struct s_mlx_data
 	bool		lose;
 	int			foe_nb;
 	t_player	*foes;
+	char		*map_path;
 }				t_solong;
 
 void	ft_print_rules(int out_fd);
@@ -106,7 +107,7 @@ int		ft_check_walls(char **map);
 int		ft_check_map_shape(char **map);
 void	ft_exit_error(char *Error_message, char **map);
 
-void	ft_parse_map(t_solong *solong, char *file);
+void	ft_parse_map(t_solong *solong);
 int		ft_mlx_init(t_solong *solong);
 int		ft_mlx_close(t_solong *solong);
 
@@ -140,5 +141,6 @@ void	ft_display_foes(t_solong *solong, int frame);
 int		ft_foe_nb(char **map);
 void	ft_check_lose_player(int key, t_solong *solong);
 void	ft_display_ending_screen(t_solong *solong);
+void	ft_reinit_game(t_solong *solong);
 
 #endif

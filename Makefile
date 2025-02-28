@@ -6,7 +6,7 @@
 #    By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/08 13:05:36 by yguinio           #+#    #+#              #
-#    Updated: 2025/02/27 10:46:09 by fureimu          ###   ########.fr        #
+#    Updated: 2025/02/28 09:30:34 by fureimu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,11 +98,5 @@ fclean: clean
 	
 re: fclean all
 
-go: all
-	valgrind --track-origins=yes --leak-check=full --show-leak-kinds=all ./$(NAME) map.ber
-	
-gonus: bonus
-	valgrind --track-origins=yes --leak-check=full --show-leak-kinds=all ./$(NAME) map.ber
-
 # Specify that these are not files to compile (just for safety)
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean bonus re

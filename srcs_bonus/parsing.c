@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:26:20 by yguinio           #+#    #+#             */
-/*   Updated: 2025/02/26 11:26:10 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/28 08:57:25 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ int	ft_foe_nb(char **map)
 }
 
 //Checks if given map is correct and parse it into a char** using split function
-void	ft_parse_map(t_solong *solong, char *file)
+void	ft_parse_map(t_solong *solong)
 {
 	int		fd;
 	char	*file_content;
 	char	*line;
 
-	fd = open(file, O_RDONLY);
+	fd = open(solong->map_path, O_RDONLY);
 	if (fd == -1)
 	{
-		perror(file);
+		perror(solong->map_path);
 		exit (1);
 	}
 	file_content = ft_calloc(sizeof(char), 1);
@@ -55,8 +55,8 @@ void	ft_parse_map(t_solong *solong, char *file)
 	solong->map = ft_split(file_content, '\n');
 	ft_map_size(solong);
 	solong->count = 0;
+	solong->foe_nb = ft_foe_nb(solong->map);
 	free(file_content);
 	close(fd);
 	ft_check_map(solong);
-	solong->foe_nb = ft_foe_nb(solong->map);
 }

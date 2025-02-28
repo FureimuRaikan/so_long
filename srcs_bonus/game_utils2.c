@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 10:38:50 by fureimu           #+#    #+#             */
-/*   Updated: 2025/02/26 13:54:00 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/28 09:25:09 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,16 @@ void	ft_check_lose_player(int key, t_solong *solong)
 			== 'X' && solong->player.cords.x < solong->map_size.x)
 			solong->lose = 1;
 	}
+}
+
+//Reinitialize the game
+void	ft_reinit_game(t_solong *solong)
+{
+	ft_free_split(solong->map);
+	ft_parse_map(solong);
+	free(solong->foes);
+	ft_alloc_foe(solong);
+	solong->count = 0;
+	solong->lose = 0;
+	solong->frame = 0;
 }

@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:28:14 by fureimu           #+#    #+#             */
-/*   Updated: 2025/02/27 10:01:30 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/28 09:03:20 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	ft_mlx_init(t_solong *solong)
 	ft_store_assets(solong);
 	solong->lose = 0;
 	solong->foe_nb = ft_foe_nb(solong->map);
+	solong->frame = 0;
 	ft_alloc_foe(solong);
 	return (1);
 }

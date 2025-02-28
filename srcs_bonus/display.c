@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 18:25:34 by fureimu           #+#    #+#             */
-/*   Updated: 2025/02/26 15:01:55 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/28 09:27:32 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	ft_display_score(t_solong solong)
 	mlx_put_image_to_window(solong.ptr, solong.win,
 		solong.assets.score[10].img_ptr, coords.x, coords.y);
 	coords.x += solong.assets.score[10].w;
-	if (solong.count > 90)
+	if (solong.count > 9000)
 	{
-		solong.count = 91;
+		solong.count = 9001;
 		ft_display_vegeta(solong, coords);
 		return ;
 	}
@@ -92,27 +92,24 @@ void	ft_display_player(t_solong *solong, int frame)
 //Displays the whole map
 int	ft_display_map(t_solong *solong)
 {
-	static int	frame;
-
 	ft_display_tile(*solong, '0', solong->assets.grass.img_ptr);
 	ft_display_tile(*solong, '1',
-		solong->assets.wall[(frame / 200) % 8].img_ptr);
+		solong->assets.wall[(solong->frame / 200) % 8].img_ptr);
 	ft_display_tile(*solong, 'C',
-		solong->assets.item[(frame / 80) % 4].img_ptr);
-	ft_display_player(solong, frame);
+		solong->assets.item[(solong->frame / 80) % 4].img_ptr);
+	ft_display_player(solong, solong->frame);
 	if (ft_is_collectibles(solong->map))
 		ft_display_tile(*solong, 'E', solong->assets.exit[0].img_ptr);
 	else
 		ft_display_tile(*solong, 'E', solong->assets.exit[1].img_ptr);
 	ft_display_score(*solong);
-	ft_display_foes(solong, frame);
-	if (frame % 100 == 0)
+	ft_display_foes(solong, solong->frame);
+	if (solong->frame % 100 == 0)
 		ft_move_enemy(solong, solong->foes);
 	if (ft_check_win(solong) || solong->lose)
 		ft_display_ending_screen(solong);
-	solong->frame = frame;
-	frame++;
-	if (frame == 1600)
-		frame = 0;
+	solong->frame++;
+	if (solong->frame == 1600)
+		solong->frame = 0;
 	return (1);
 }
