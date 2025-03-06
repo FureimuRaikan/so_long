@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+         #
+#    By: yguinio <yguinio@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/08 13:05:36 by yguinio           #+#    #+#              #
-#    Updated: 2025/02/28 09:30:34 by fureimu          ###   ########.fr        #
+#    Updated: 2025/03/04 09:36:14 by yguinio          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = cc
 BONUS_FLAG = .bonus_compiled
 
 LIBFT_DIR = ./libft
-MINILIBX_DIR = ./minilibx/
+MINILIBX_DIR = ./minilibx-linux/
 SRC_DIR = ./srcs/
 SRC_BONUS_DIR = ./srcs_bonus/
 OBJ_DIR = ./obj/
